@@ -9,13 +9,17 @@
 </head>
 
 <body>
-    <ul>
-        <li><?= $tasks['title']; ?></li>
-        <li><?= $tasks['due']; ?></li>
-        <?php
-        $complete = $tasks['completed'] ? "completed" : "incompleted";
+    <h1>My To Do</h1>
+    <?php foreach ($tasks as $task) : ?>
+    <?php
+        if ($task->complete) {
+            echo "<strike>$task->description</strike><br>";
+        } else {
+            echo "$task->description<br>";
+        }
         ?>
-        <li><?= $complete  ?></li>
+
+    <?php endforeach; ?>
     </ul>
 </body>
 

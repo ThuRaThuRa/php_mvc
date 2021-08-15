@@ -1,22 +1,21 @@
 <?php
 class Car
 {
-
-    public static function startEngine()
+    protected $carName;
+    public static function start()
     {
-        echo "start engine";
-        return new Car;
+        echo "Car is start";
     }
-    public function whatIsThis()
+    public function __construct($carName)
     {
-        return $this;
+        $this->carName = $carName;
     }
-    public function drive()
+    private function drive()
     {
-        return "This is drive method";
+        echo "$this->carName is driving";
+    }
+    public function getDrive()
+    {
+        $this->drive();
     }
 }
-$c = new Car;
-echo $c->drive();  //This is drive
-
-// var_dump($c->whatIsThis());
