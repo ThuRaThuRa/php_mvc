@@ -1,3 +1,3 @@
 <?php
 
-require "views/contactus.view.php";
+require "views/contact.view.php";

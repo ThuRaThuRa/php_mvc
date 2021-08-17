@@ -1,26 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require "views/Partial/heading.php"; ?>
+<h1>Submit your name</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<form action="/names" method="POST">
+    <input type="text" name="name">
+    <input type="submit" value="submit">
+</form>
 
-<body>
-    <h1>My To Do</h1>
-    <?php foreach ($tasks as $task) : ?>
-    <?php
-        if ($task->complete) {
-            echo "<strike>$task->description</strike><br>";
-        } else {
-            echo "$task->description<br>";
-        }
-        ?>
 
-    <?php endforeach; ?>
-    </ul>
-</body>
-
-</html>
+<?php require "views/Partial/footer.php";
