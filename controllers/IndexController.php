@@ -2,4 +2,6 @@
 
 $users = $database->selectAll("user");
 
-require "views/index.view.php";
+view("index", [
+    "users" => $users
+]);
