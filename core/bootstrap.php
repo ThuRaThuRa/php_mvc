@@ -7,6 +7,6 @@ require "core/Router.php";
 require "core/Request.php";
 
 
-$query = new QueryBuilder(
+$database = new QueryBuilder(
     Connection::make($config['database'])
 );
