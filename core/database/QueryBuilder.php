@@ -29,4 +29,24 @@ class QueryBuilder
         $getDataValues = (array_values($dataArr));
         $statement->execute($getDataValues);
     }
+    public function update($data, $table, $id)
+    {
+        // dd(count($data));
+        $sql = "update $table set ";
+        $values = "";
+        $x = 1;
+        foreach ($data as $k => $v) {
+            $values .= "$k=?";
+            if ($x < count($data)) {
+                $values .= ",";
+                $x++;
+            }
+        }
+        // $values = rtrim($values, ",");
+        // dd($values);
+        $sql .= "$values where id=$id";
+        // dd($sql);
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute(array_values($data));
+    }
 }

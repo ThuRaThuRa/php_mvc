@@ -5,4 +5,6 @@ $database->insert([
     "name" => $_POST['name'],
 
 ], "user");
+
+
 header("Location:/");
