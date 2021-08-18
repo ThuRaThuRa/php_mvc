@@ -1,6 +1,6 @@
 <?php
 
-$users = $database->selectAll("user");
+$users = App::get("database")->selectAll("user");
 
 view("index", [
     "users" => $users,

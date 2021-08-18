@@ -1,5 +1,5 @@
 <?php
-$database->update([
+App::get("database")->update([
     "name" => $_POST['name'],
 
 
