@@ -19,10 +19,17 @@ class Router
     }
     public function direct($uri, $method)
     {
-        if (array_key_exists($uri, $this->routes[$method])) {
-            return $this->routes[$method][$uri];
+        if (!array_key_exists($uri, $this->routes[$method])) {
+            die("404 page ");
         }
-        die("404 page ");
+        $explosion = (explode("@", $this->routes[$method][$uri]));
+        $this->callMethod($explosion[0], $explosion[1]);;
+        // return $this->routes[$method][$uri];
+    }
+    public function callMethod($class, $method)
+    {
+        $class = new $class;
+        $class->$method();
     }
     public static function load($filename)
     {
